@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import sys
 import os
 import re
@@ -5,7 +7,9 @@ import subprocess
 import collections
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
-sys.path.append('/home/skothur1/clir/elastic4clir/index_collection/trec9_chinese/')
+
+#include path to index and search code
+sys.path.append('/export/a10/ssrir/CLIR/DUH/elastic4clir/index_collection/trec9_chinese')
 from TREC_search import search
 
 
@@ -114,7 +118,9 @@ def eval(query_file, ref_out_file, SEARCH_OUT, TREC_PATH):
 
 if __name__ == '__main__':
     USAGE = '\nUSAGE : python TREC_eval.py <query_file> <ref_output> \n'
-    TREC_PATH = '/home/skothur1/clir/trec_eval.8.1.tar/trec_eval.9.0'
+    
+    #Path to TREC_Eval C-code
+    TREC_PATH = '/export/a10/ssrir/CLIR/DUH/elastic4clir/evaluation/trec_eval.9.0'
     
     #File to store search output
     SEARCH_OUT = "search_output.txt"

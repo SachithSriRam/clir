@@ -26,9 +26,9 @@ if __name__ == '__main__':
     USAGE = "python TREC_search.py <query>"
     if len(sys.argv) != 2:
         print (USAGE)
-        sys.exit
+        sys.exit()
     
     res = search(str(sys.argv[1]))
     for each_doc in res['hits']['hits']:
         print(each_doc['_id'], each_doc['_score'])
-    #print (json.dumps(res, indent=4))
+    print (json.dumps(res, indent=4))

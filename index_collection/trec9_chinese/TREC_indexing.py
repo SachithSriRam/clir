@@ -10,7 +10,7 @@ import requests
 
 
 #datadir="/Users/SamZhang/Documents/RA2017/src/dataset/TREC/trec9_chinese/docs" 
-datadir='/home/skothur1/clir/trec9_chinese/docs'
+datadir='/export/a10/ssrir/CLIR/DUH/data/trec9_chinese/docs'
 
 # In[224]:
 
@@ -68,7 +68,7 @@ mapping = '''
     }
   }
 }'''
-es.indices.delete(index='trec')
+#es.indices.delete(index='trec')
 es.indices.create(index='trec', ignore=400, body=mapping)
 
 
